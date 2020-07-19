@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="title='F�nix - Mutuales'">
+
+
+<th:block layout:fragment="content-head">
+	<link rel="stylesheet"
+		th:href="@{/webjars/datatables/css/jquery.dataTables.min.css}"></link>
+	<link rel="stylesheet"
+		th:href="@{/webjars/datatables/css/dataTables.bootstrap.min.css}"></link>
+</th:block>
+
+
+<th:block layout:fragment="content-header">
+	<section class="content-header">
+	<h3  align="center"><span class="fa fa-book"></span>LIBRERIA</h3><img src="https://www.literaturasm.com/sites/default/files/styles/blog_full/public/estanterias.jpg?itok=55YhACwn" width="1100" height="150"></img>
+	</section>
+</th:block>
+
+<th:block layout:fragment="content">
+	<section class="content">
+
+		<label>LIBRO </label> <br></br> <input id="txtlibro"> </input> <br></br>
+		<br></br> <label>AUTOR </label> <br></br> <input id="txtautor">
+		</input> <br></br> <br></br>
+		<button class="btn btn-success" onClick="guardar()">Guardar
+		</button>
+
+	</section>
+
+	<div align="center">
+	<label>Lista de libros 2020</label>
+	</div>
+	<br></br>
+	<div align="center">
+	
+	
+	
+		<label>Libros</label> <select id="selectLibros"
+			onchange="cargarFormularioEdicion()"></select><br></br><br></br><br></br><br></br>
+		<button class="btn btn-danger" onClick="eliminar()">Eliminar
+			libro</button>
+
+
+	</div>
+</th:block>
+
+
+<th:block layout:fragment="footer-script">
+	<script th:src="@{/webjars/bootstrap-validator/dist/validator.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/dataTables.bootstrap.min.js}"></script>
+	<script th:src="@{/js/secured/usuario/libro.js}"></script>
+</th:block>
+
+
+</html>
