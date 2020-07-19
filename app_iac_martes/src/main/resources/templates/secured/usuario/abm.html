@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="title='F�nix - Mutuales'">
+
+
+<th:block layout:fragment="content-head">
+                <link rel="stylesheet" th:href="@{/webjars/datatables/css/jquery.dataTables.min.css}"></link>
+                <link rel="stylesheet" th:href="@{/webjars/datatables/css/dataTables.bootstrap.min.css}"></link>
+</th:block>
+
+
+<th:block layout:fragment="content-header">
+	 <section class="content-header">
+	   <h3>
+	     ABM MANUAL
+	   </h3>
+	 </section> 
+</th:block>
+
+<th:block layout:fragment="content">
+	<section class="content">
+
+		<label>Ingreso Codigo </label>
+		<br></br>
+		<input id="txtcodigo"> </input>
+		<br></br>
+		<br></br>
+		<label>Ingreso Descrip </label>
+		<br></br>
+		<input id="txtdescripcion"> </input>
+		<br></br>
+		<br></br>
+		<button class="btn btn-success" onClick="guardar()" > Guardar Art.  </button>
+		
+	</section>
+	
+	<div>
+	
+		<label>Articulos </label>			
+		<select id="selectArticulos"  onchange="cargarFormularioEdicion()" ></select>
+		
+		<br></br>
+		<br></br>
+		
+		
+		<label>Codigo </label>
+		<br></br>
+		<input id="txtcodigo_e" > </input>
+		<br></br>
+		<br></br>
+		<label>Descrip </label>
+		<br></br>
+		<input id="txtdescripcion_e"> </input>
+		<br></br>
+		<br></br>
+		<button class= "btn btn-info" onClick="actualizar()"> Actualizar </button>
+		
+		<button class= "btn btn-danger" onClick="eliminar()"> eliminar </button>
+		
+		<br></br>
+		<br></br>
+		
+	</div>
+ 	
+ 	
+</th:block>
+
+
+<th:block layout:fragment="footer-script">
+	<script th:src="@{/webjars/bootstrap-validator/dist/validator.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/dataTables.bootstrap.min.js}"></script>
+	<script th:src="@{/js/secured/usuario/abm.js}"></script>	
+</th:block>
+
+
+</html>
